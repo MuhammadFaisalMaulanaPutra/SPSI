@@ -31,6 +31,7 @@
             <h3 class="mb-3"><strong>Log in</strong></h3>
             <p class="mb-4"></p>
             <form action="/login" method="post">
+              @csrf
               <div class="form-group first">
                 <label for="username">Username</label>
                 <input type="text" name='username' class="form-control" placeholder="NIM/NIP" id="username">

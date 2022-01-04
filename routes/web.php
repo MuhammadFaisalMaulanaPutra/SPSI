@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PermohonanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,8 +23,16 @@ Route::get('/forgotpass', function () {
     return view('forgotpassword');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
+Route::get('/home', function () {
+    return view('home');
 });
 
 Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
+
+Route::get('/dashboard-validasi-sic1', [PermohonanController::class, 'indexc1']);
+Route::get('/dashboard-validasi-sic2', [PermohonanController::class, 'indexc2']);
+Route::get('/dashboard-validasi-sic3', [PermohonanController::class, 'indexc3']);
+
+Route::post('/approve/{id}', [PermohonanController::class, 'approve']);
+Route::post('/decline/{id}', [PermohonanController::class, 'decline']);
