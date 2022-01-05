@@ -11,7 +11,7 @@ class PermohonanController extends Controller
     public function indexc1()
     {
         return view('validasi', [
-            'permohonan'   => Permohonan::where('kelas','si-c1')->get(),
+            'permohonan'   => Permohonan::where('kelas','si-c1')->where('validasi','0')->get(),
             'counter' => 1,
             'title' => 'SI-C1'
         ]);
@@ -20,7 +20,7 @@ class PermohonanController extends Controller
     public function indexc2()
     {
         return view('validasi', [
-            'permohonan'   => Permohonan::where('kelas','si-c2')->get(),
+            'permohonan'   => Permohonan::where('kelas','si-c2')->where('validasi','0')->get(),
             'counter' => 1,
             'title' => 'SI-C2'
         ]);
@@ -29,7 +29,7 @@ class PermohonanController extends Controller
     public function indexc3()
     {
         return view('validasi', [
-            'permohonan'   => Permohonan::where('kelas','si-c3')->get(),
+            'permohonan'   => Permohonan::where('kelas','si-c3')->where('validasi','0')->get(),
             'counter' => 1,
             'title' => 'SI-C3'
         ]);
